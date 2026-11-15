@@ -122,3 +122,43 @@ def test_chunk_boundaries_preserve_overlapping_context():
     pieces = list(chunks(value))
     assert all(len(piece) <= 400 for piece in pieces)
     assert sum(len(piece) for piece in pieces) > len(value)
+
+
+def test_spaceless_sentence_falls_back_to_partial_matches(db):
+    save(db, "a", title="微波爐就能做的巧克力蛋糕食譜")
+    save(db, "b", title="台北車站附近的餐廳")
+    save(db, "c", title="食譜")
+    hits = search(db, "me", "我最近看的微波食譜")
+    assert [hit["save_id"] for hit in hits] == ["a"]  # "c" shares one common word only.
+    assert search(db, "me", "台北 餐廳")[0]["save_id"] == "b"  # Exact all-token matching still wins.
+    assert search(db, "me", "完全無關的句子內容") == []
+
+
+def test_bare_topic_label_does_not_outrank_content(db):
+    save(db, "a", title="油淋雞便當", topics=["食譜"])
+    save(db, "b", title="提拉米蘇", topics=["食譜"])
+    query = [0.0, 1.0] + [0.0] * 382
+    for row in db.scalars(select(SearchChunk)):
+        row.embedding = query if row.field == "topics" else ([0.6, 0.8] if row.save_id == "b" else [1.0, 0.0]) + [0.0] * 382
+        row.embedding_model = EMBEDDING_MODEL
+    db.commit()
+    hits = search(db, "me", "點心食譜", mode="semantic", query_vector=query)
+    assert [hit["save_id"] for hit in hits] == ["b", "a"]
+    assert hits[0]["match_field"] == "display_title"
+
+
+def test_vector_cache_follows_new_and_removed_chunks(db):
+    vector = [1.0] + [0.0] * 383
+    first = save(db, "a", title="第一筆")
+    for row in db.scalars(select(SearchChunk)):
+        row.embedding, row.embedding_model = vector, EMBEDDING_MODEL
+    db.commit()
+    assert [hit["save_id"] for hit in search(db, "me", "查詢", mode="semantic", query_vector=vector)] == ["a"]
+    save(db, "b", title="第二筆")
+    for row in db.scalars(select(SearchChunk).where(SearchChunk.embedding_model.is_(None))):
+        row.embedding, row.embedding_model = vector, EMBEDDING_MODEL
+    db.commit()
+    assert {hit["save_id"] for hit in search(db, "me", "查詢", mode="semantic", query_vector=vector)} == {"a", "b"}
+    db.delete(first)
+    db.commit()
+    assert [hit["save_id"] for hit in search(db, "me", "查詢", mode="semantic", query_vector=vector)] == ["b"]

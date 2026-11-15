@@ -78,4 +78,5 @@ def test_keyword_retrieval_over_golden_set_without_models(tmp_path, monkeypatch)
     assert report["semantic_skipped"] and list(report["modes"]) == ["keyword"]
     ranks = {query["id"]: query["first_relevant_rank"]["keyword"] for query in report["queries"]}
     assert ranks["q01"] == 1 and ranks["q02"] == 1
-    assert ranks["q03"] is None  # Chinese query for a Japanese recipe needs semantic search.
+    assert ranks["q03"] == 1  # A spaceless sentence falls back to partial matching.
+    assert ranks["q04"] is None  # 燒肉 vs 焼肉: cross-script needs semantic search.

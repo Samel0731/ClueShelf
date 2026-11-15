@@ -7,27 +7,27 @@
   "modes": {
     "keyword": {
       "queries": 20,
-      "hit@5": 0.4,
-      "recall@5": 0.3,
-      "mrr": 0.4,
-      "latency_ms_p50": 2.2,
-      "latency_ms_p95": 4.5
+      "hit@5": 0.8,
+      "recall@5": 0.5583333333333333,
+      "mrr": 0.8,
+      "latency_ms_p50": 1.8,
+      "latency_ms_p95": 2.9
     },
     "semantic": {
       "queries": 20,
       "hit@5": 1.0,
       "recall@5": 0.9416666666666668,
       "mrr": 1.0,
-      "latency_ms_p50": 32.1,
-      "latency_ms_p95": 33.7
+      "latency_ms_p50": 14.2,
+      "latency_ms_p95": 16.6
     },
     "hybrid": {
       "queries": 20,
       "hit@5": 1.0,
       "recall@5": 0.9416666666666668,
-      "mrr": 1.0,
-      "latency_ms_p50": 32.7,
-      "latency_ms_p95": 33.9
+      "mrr": 0.975,
+      "latency_ms_p50": 15.7,
+      "latency_ms_p95": 16.5
     }
   },
   "queries": [
@@ -66,7 +66,7 @@
         "y20"
       ],
       "first_relevant_rank": {
-        "keyword": null,
+        "keyword": 1,
         "semantic": 1,
         "hybrid": 1
       }
@@ -120,7 +120,7 @@
         "t04"
       ],
       "first_relevant_rank": {
-        "keyword": null,
+        "keyword": 1,
         "semantic": 1,
         "hybrid": 1
       }
@@ -162,7 +162,7 @@
         "t07"
       ],
       "first_relevant_rank": {
-        "keyword": null,
+        "keyword": 1,
         "semantic": 1,
         "hybrid": 1
       }
@@ -192,7 +192,7 @@
         "t09"
       ],
       "first_relevant_rank": {
-        "keyword": null,
+        "keyword": 1,
         "semantic": 1,
         "hybrid": 1
       }
@@ -206,7 +206,7 @@
         "y12"
       ],
       "first_relevant_rank": {
-        "keyword": null,
+        "keyword": 1,
         "semantic": 1,
         "hybrid": 1
       }
@@ -237,7 +237,7 @@
       "first_relevant_rank": {
         "keyword": null,
         "semantic": 1,
-        "hybrid": 1
+        "hybrid": 2
       }
     },
     {
@@ -248,7 +248,7 @@
         "y20"
       ],
       "first_relevant_rank": {
-        "keyword": null,
+        "keyword": 1,
         "semantic": 1,
         "hybrid": 1
       }
@@ -287,7 +287,7 @@
         "t02"
       ],
       "first_relevant_rank": {
-        "keyword": null,
+        "keyword": 1,
         "semantic": 1,
         "hybrid": 1
       }
@@ -300,7 +300,7 @@
         "i06"
       ],
       "first_relevant_rank": {
-        "keyword": null,
+        "keyword": 1,
         "semantic": 1,
         "hybrid": 1
       }
