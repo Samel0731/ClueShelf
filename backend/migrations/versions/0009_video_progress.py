@@ -1,0 +1,16 @@
+"""Add live progress to video analysis jobs."""
+from alembic import op
+import sqlalchemy as sa
+
+revision = "0009"
+down_revision = "0008"
+branch_labels = None
+depends_on = None
+
+
+def upgrade():
+    op.add_column("video_analyses", sa.Column("progress", sa.JSON(), nullable=True))
+
+
+def downgrade():
+    op.drop_column("video_analyses", "progress")

@@ -1,0 +1,309 @@
+{
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "embedding_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+  "semantic_skipped": false,
+  "saves": 60,
+  "k": 5,
+  "modes": {
+    "keyword": {
+      "queries": 20,
+      "hit@5": 0.4,
+      "recall@5": 0.3,
+      "mrr": 0.4,
+      "latency_ms_p50": 2.2,
+      "latency_ms_p95": 4.5
+    },
+    "semantic": {
+      "queries": 20,
+      "hit@5": 1.0,
+      "recall@5": 0.9416666666666668,
+      "mrr": 1.0,
+      "latency_ms_p50": 32.1,
+      "latency_ms_p95": 33.7
+    },
+    "hybrid": {
+      "queries": 20,
+      "hit@5": 1.0,
+      "recall@5": 0.9416666666666668,
+      "mrr": 1.0,
+      "latency_ms_p50": 32.7,
+      "latency_ms_p95": 33.9
+    }
+  },
+  "queries": [
+    {
+      "id": "q01",
+      "query": "拉麵",
+      "kind": "exact",
+      "relevant": [
+        "i01"
+      ],
+      "first_relevant_rank": {
+        "keyword": 1,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q02",
+      "query": "台中 生魚片",
+      "kind": "exact",
+      "relevant": [
+        "t01"
+      ],
+      "first_relevant_rank": {
+        "keyword": 1,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q03",
+      "query": "冷凍備餐料理",
+      "kind": "cross-lingual",
+      "relevant": [
+        "y01",
+        "y20"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q04",
+      "query": "大阪燒肉",
+      "kind": "cross-lingual",
+      "relevant": [
+        "y19"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q05",
+      "query": "京都賞楓",
+      "kind": "cross-lingual",
+      "relevant": [
+        "y04"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q06",
+      "query": "首爾咖啡廳",
+      "kind": "exact",
+      "relevant": [
+        "i04"
+      ],
+      "first_relevant_rank": {
+        "keyword": 1,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q07",
+      "query": "韓國自由行",
+      "kind": "paraphrase",
+      "relevant": [
+        "y05",
+        "i07",
+        "t04"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q08",
+      "query": "MLOps",
+      "kind": "exact",
+      "relevant": [
+        "y09",
+        "t06"
+      ],
+      "first_relevant_rank": {
+        "keyword": 1,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q09",
+      "query": "本地 RAG",
+      "kind": "exact",
+      "relevant": [
+        "y08",
+        "t05"
+      ],
+      "first_relevant_rank": {
+        "keyword": 1,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q10",
+      "query": "面試準備",
+      "kind": "paraphrase",
+      "relevant": [
+        "y13",
+        "t07"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q11",
+      "query": "履歷",
+      "kind": "exact",
+      "relevant": [
+        "y14",
+        "i17",
+        "t08"
+      ],
+      "first_relevant_rank": {
+        "keyword": 1,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q12",
+      "query": "日文文法",
+      "kind": "cross-lingual",
+      "relevant": [
+        "y11",
+        "i16",
+        "t09"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q13",
+      "query": "韓文聽力",
+      "kind": "exact",
+      "relevant": [
+        "t10",
+        "y12"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q14",
+      "query": "演唱會",
+      "kind": "exact",
+      "relevant": [
+        "y07",
+        "t12",
+        "y16"
+      ],
+      "first_relevant_rank": {
+        "keyword": 1,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q15",
+      "query": "電鍋料理",
+      "kind": "paraphrase",
+      "relevant": [
+        "y02",
+        "t13"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q16",
+      "query": "高蛋白便當",
+      "kind": "paraphrase",
+      "relevant": [
+        "y20"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q17",
+      "query": "沖繩自駕",
+      "kind": "exact",
+      "relevant": [
+        "i05"
+      ],
+      "first_relevant_rank": {
+        "keyword": 1,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q18",
+      "query": "市集活動",
+      "kind": "paraphrase",
+      "relevant": [
+        "i14"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q19",
+      "query": "東京 一個人吃飯",
+      "kind": "paraphrase",
+      "relevant": [
+        "t02"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    },
+    {
+      "id": "q20",
+      "query": "北海道景點",
+      "kind": "cross-lingual",
+      "relevant": [
+        "i06"
+      ],
+      "first_relevant_rank": {
+        "keyword": null,
+        "semantic": 1,
+        "hybrid": 1
+      }
+    }
+  ]
+}

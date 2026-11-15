@@ -1,0 +1,20 @@
+{"id":"q01","query":"拉麵","relevant":["i01"],"kind":"exact"}
+{"id":"q02","query":"台中 生魚片","relevant":["t01"],"kind":"exact"}
+{"id":"q03","query":"冷凍備餐料理","relevant":["y01","y20"],"kind":"cross-lingual"}
+{"id":"q04","query":"大阪燒肉","relevant":["y19"],"kind":"cross-lingual"}
+{"id":"q05","query":"京都賞楓","relevant":["y04"],"kind":"cross-lingual"}
+{"id":"q06","query":"首爾咖啡廳","relevant":["i04"],"kind":"exact"}
+{"id":"q07","query":"韓國自由行","relevant":["y05","i07","t04"],"kind":"paraphrase"}
+{"id":"q08","query":"MLOps","relevant":["y09","t06"],"kind":"exact"}
+{"id":"q09","query":"本地 RAG","relevant":["y08","t05"],"kind":"exact"}
+{"id":"q10","query":"面試準備","relevant":["y13","t07"],"kind":"paraphrase"}
+{"id":"q11","query":"履歷","relevant":["y14","i17","t08"],"kind":"exact"}
+{"id":"q12","query":"日文文法","relevant":["y11","i16","t09"],"kind":"cross-lingual"}
+{"id":"q13","query":"韓文聽力","relevant":["t10","y12"],"kind":"exact"}
+{"id":"q14","query":"演唱會","relevant":["y07","t12","y16"],"kind":"exact"}
+{"id":"q15","query":"電鍋料理","relevant":["y02","t13"],"kind":"paraphrase"}
+{"id":"q16","query":"高蛋白便當","relevant":["y20"],"kind":"paraphrase"}
+{"id":"q17","query":"沖繩自駕","relevant":["i05"],"kind":"exact"}
+{"id":"q18","query":"市集活動","relevant":["i14"],"kind":"paraphrase"}
+{"id":"q19","query":"東京 一個人吃飯","relevant":["t02"],"kind":"paraphrase"}
+{"id":"q20","query":"北海道景點","relevant":["i06"],"kind":"cross-lingual"}

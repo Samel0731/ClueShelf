@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+data/
+.env
+node_modules/
+.npm-cache/
+*.egg-info/
+.next/
+*.tsbuildinfo
+work/
+outputs/phase-two-validation.json
+reports/local/
+ci-reports/
+# Screenshots of the real personal collection; retake with demo data before publishing.
+outputs/*.jpg

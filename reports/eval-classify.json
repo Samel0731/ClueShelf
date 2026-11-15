@@ -1,0 +1,1240 @@
+[
+  {
+    "model": "qwen3:4b",
+    "prompt_version": "classify-v1",
+    "options": {
+      "temperature": 0,
+      "num_ctx": 8192,
+      "num_predict": 1500
+    },
+    "metrics": {
+      "total": 60,
+      "failed": 1,
+      "failure_rate": 0.016666666666666666,
+      "primary_accuracy": 0.8,
+      "exact_match": 0.75,
+      "micro": {
+        "precision": 0.864406779661017,
+        "recall": 0.7727272727272727,
+        "f1": 0.8159999999999998,
+        "support": 66
+      },
+      "per_topic": {
+        "其他": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5
+        },
+        "旅遊": {
+          "precision": 0.8461538461538461,
+          "recall": 0.9166666666666666,
+          "f1": 0.8799999999999999,
+          "support": 12
+        },
+        "求職": {
+          "precision": 0.7142857142857143,
+          "recall": 1.0,
+          "f1": 0.8333333333333333,
+          "support": 5
+        },
+        "活動": {
+          "precision": 0.75,
+          "recall": 0.5,
+          "f1": 0.6,
+          "support": 6
+        },
+        "程式": {
+          "precision": 0.8571428571428571,
+          "recall": 0.75,
+          "f1": 0.7999999999999999,
+          "support": 8
+        },
+        "語言學習": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 5
+        },
+        "音樂": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        },
+        "食譜": {
+          "precision": 0.7777777777777778,
+          "recall": 0.875,
+          "f1": 0.823529411764706,
+          "support": 8
+        },
+        "餐廳": {
+          "precision": 1.0,
+          "recall": 0.7,
+          "f1": 0.8235294117647058,
+          "support": 10
+        }
+      }
+    },
+    "latency_seconds": {
+      "p50": 1.4900239000562578,
+      "p95": 1.9348863000050187,
+      "successful_calls": 59
+    },
+    "rows": [
+      {
+        "id": "y01",
+        "platform": "youtube",
+        "lang": "ja",
+        "expected": [
+          "食譜"
+        ],
+        "predicted": null,
+        "tags": [],
+        "seconds": 20.813,
+        "error": "1 validation error for Analysis\n  Invalid JSON: EOF while parsing a string at line 10 column 4610 [type=json_invalid, input_value='{\\n  \"suggested_title\": ..._title\\\\\": \\\\\"豆腐雞', input_type=str]\n    Fo"
+      },
+      {
+        "id": "y02",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "食譜"
+        ],
+        "predicted": [
+          "食譜"
+        ],
+        "tags": [
+          "電鍋",
+          "巴斯克乳酪蛋糕",
+          "奶油乳酪",
+          "雞蛋",
+          "鮮奶油",
+          "砂糖"
+        ],
+        "seconds": 1.935,
+        "error": null
+      },
+      {
+        "id": "y03",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "餐廳",
+          "旅遊"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "台南",
+          "小吃",
+          "國華街",
+          "保安路",
+          "牛肉湯",
+          "碗粿",
+          "鱔魚意麵",
+          "虱目魚粥"
+        ],
+        "seconds": 1.694,
+        "error": null
+      },
+      {
+        "id": "y04",
+        "platform": "youtube",
+        "lang": "ja",
+        "expected": [
+          "旅遊"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "京都",
+          "嵐山",
+          "紅葉",
+          "行程"
+        ],
+        "seconds": 1.418,
+        "error": null
+      },
+      {
+        "id": "y05",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "旅遊"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "首爾",
+          "自由行",
+          "弘大",
+          "聖水洞",
+          "景福宮",
+          "韓服"
+        ],
+        "seconds": 1.606,
+        "error": null
+      },
+      {
+        "id": "y06",
+        "platform": "youtube",
+        "lang": "ja",
+        "expected": [
+          "音樂"
+        ],
+        "predicted": [
+          "音樂"
+        ],
+        "tags": [
+          "歌ってみた",
+          "星野ひかり",
+          "夜明けのメロディ",
+          "cover"
+        ],
+        "seconds": 1.516,
+        "error": null
+      },
+      {
+        "id": "y07",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "音樂"
+        ],
+        "predicted": [
+          "音樂"
+        ],
+        "tags": [
+          "浮光樂:樂團",
+          "巡迴演唱會",
+          "台北",
+          "Live 精華",
+          "潮汐",
+          "午夜電台",
+          "回聲"
+        ],
+        "seconds": 1.788,
+        "error": null
+      },
+      {
+        "id": "y08",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "程式"
+        ],
+        "predicted": [
+          "程式"
+        ],
+        "tags": [
+          "FastAPI",
+          "Oll:llama",
+          "RAG",
+          "本地服務"
+        ],
+        "seconds": 1.488,
+        "error": null
+      },
+      {
+        "id": "y09",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "程式"
+        ],
+        "predicted": [
+          "程式"
+        ],
+        "tags": [
+          "MLOps",
+          "MLflow",
+          "Docker",
+          "CI/CD",
+          "Prometheus"
+        ],
+        "seconds": 1.431,
+        "error": null
+      },
+      {
+        "id": "y10",
+        "platform": "youtube",
+        "lang": "ja",
+        "expected": [
+          "程式"
+        ],
+        "predicted": [
+          "程式"
+        ],
+        "tags": [
+          "Python",
+          "LLM",
+          "工具調用",
+          "函數結構"
+        ],
+        "seconds": 1.375,
+        "error": null
+      },
+      {
+        "id": "y11",
+        "platform": "youtube",
+        "lang": "ja",
+        "expected": [
+          "語言學習"
+        ],
+        "predicted": [
+          "語言學習"
+        ],
+        "tags": [
+          "JL:PT N2",
+          "文法",
+          "日本語能力試験"
+        ],
+        "seconds": 1.49,
+        "error": null
+      },
+      {
+        "id": "y12",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "語言學習"
+        ],
+        "predicted": [
+          "語言學習"
+        ],
+        "tags": [
+          "韓文",
+          "收尾音",
+          "發音"
+        ],
+        "seconds": 1.346,
+        "error": null
+      },
+      {
+        "id": "y13",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "求職",
+          "程式"
+        ],
+        "predicted": [
+          "求職"
+        ],
+        "tags": [
+          "系統設計",
+          "面試準備",
+          "軟體工程師"
+        ],
+        "seconds": 1.385,
+        "error": null
+      },
+      {
+        "id": "y14",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "求職"
+        ],
+        "predicted": [
+          "求職"
+        ],
+        "tags": [
+          "資料科學家",
+          "履歷",
+          "量化成果",
+          "作品集"
+        ],
+        "seconds": 1.519,
+        "error": null
+      },
+      {
+        "id": "y15",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "活動"
+        ],
+        "predicted": [
+          "活動"
+        ],
+        "tags": [
+          "城南書展",
+          "書展",
+          "展覽館",
+          "活動時間"
+        ],
+        "seconds": 1.813,
+        "error": null
+      },
+      {
+        "id": "y16",
+        "platform": "youtube",
+        "lang": "ja",
+        "expected": [
+          "活動",
+          "音樂"
+        ],
+        "predicted": [
+          "音樂"
+        ],
+        "tags": [
+          "青空バンド",
+          "東京公演",
+          "12月20日",
+          "新宿ミライホール",
+          "個人演唱會"
+        ],
+        "seconds": 1.833,
+        "error": null
+      },
+      {
+        "id": "y17",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "其他"
+        ],
+        "predicted": [
+          "食譜"
+        ],
+        "tags": [
+          "收納",
+          "衣櫃",
+          "季節"
+        ],
+        "seconds": 1.397,
+        "error": null
+      },
+      {
+        "id": "y18",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "其他"
+        ],
+        "predicted": [
+          "求職"
+        ],
+        "tags": [
+          "養貓",
+          "貓咪",
+          "領養"
+        ],
+        "seconds": 1.397,
+        "error": null
+      },
+      {
+        "id": "y19",
+        "platform": "youtube",
+        "lang": "ja",
+        "expected": [
+          "餐廳"
+        ],
+        "predicted": [
+          "餐廳"
+        ],
+        "tags": [
+          "大阪",
+          "難波",
+          "燒肉",
+          "牛排",
+          "餐廳推薦"
+        ],
+        "seconds": 1.614,
+        "error": null
+      },
+      {
+        "id": "y20",
+        "platform": "youtube",
+        "lang": "zh",
+        "expected": [
+          "食譜"
+        ],
+        "predicted": [
+          "食譜"
+        ],
+        "tags": [
+          "雞胸肉",
+          "高蛋白",
+          "低脂",
+          "便當",
+          "糙米飯",
+          "花椰菜",
+          "冷凍"
+        ],
+        "seconds": 1.777,
+        "error": null
+      },
+      {
+        "id": "i01",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "餐廳"
+        ],
+        "predicted": [
+          "餐廳"
+        ],
+        "tags": [
+          "台北",
+          "中山區",
+          "拉麵",
+          "麵屋 霧島",
+          "雞白湯",
+          "叉燒",
+          "低溫舒肥"
+        ],
+        "seconds": 1.901,
+        "error": null
+      },
+      {
+        "id": "i02",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "餐廳"
+        ],
+        "predicted": [
+          "餐廳"
+        ],
+        "tags": [
+          "台中",
+          "早午餐",
+          "班尼: 現在要處理這個JSON。首先，我需要理解用戶提供的資料，然後按照規則進行整理。用戶的JSON內容是：{"
+        ],
+        "seconds": 2.03,
+        "error": null
+      },
+      {
+        "id": "i03",
+        "platform": "instagram",
+        "lang": "ja",
+        "expected": [
+          "餐廳"
+        ],
+        "predicted": [
+          "食譜"
+        ],
+        "tags": [
+          "福岡",
+          "天神",
+          "もつ鍋",
+          "博多つば: つばめ",
+          "ちゃんぽん麺"
+        ],
+        "seconds": 1.795,
+        "error": null
+      },
+      {
+        "id": "i04",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "餐廳",
+          "旅遊"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "首爾",
+          "聖水洞",
+          "Cafe Moru",
+          "鹽麵包",
+          "開心果拿鐵"
+        ],
+        "seconds": 1.643,
+        "error": null
+      },
+      {
+        "id": "i05",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "旅遊"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "沖繩",
+          "古宇:利島",
+          "自駕",
+          "海景"
+        ],
+        "seconds": 1.602,
+        "error": null
+      },
+      {
+        "id": "i06",
+        "platform": "instagram",
+        "lang": "ja",
+        "expected": [
+          "旅遊"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "北海道",
+          "美瑛",
+          "青い池",
+          "白ひげ滝",
+          "駐車場"
+        ],
+        "seconds": 1.647,
+        "error": null
+      },
+      {
+        "id": "i07",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "旅遊"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "釜山",
+          "海雲台",
+          "甘川洞文化村",
+          "KTX",
+          "韓國旅遊"
+        ],
+        "seconds": 1.553,
+        "error": null
+      },
+      {
+        "id": "i08",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "旅遊"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "花蓮",
+          "太魯: 雨後落石多，出發前先查開放狀況。#花蓮 #太魯閣",
+          "步道"
+        ],
+        "seconds": 1.602,
+        "error": null
+      },
+      {
+        "id": "i09",
+        "platform": "instagram",
+        "lang": "ja",
+        "expected": [
+          "食譜"
+        ],
+        "predicted": [
+          "食譜"
+        ],
+        "tags": [
+          "厚揚げ",
+          "豚バラ",
+          "甘辛炒め",
+          "簡單食譜"
+        ],
+        "seconds": 1.497,
+        "error": null
+      },
+      {
+        "id": "i10",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "食譜"
+        ],
+        "predicted": [
+          "食譜"
+        ],
+        "tags": [
+          "氣炸鍋",
+          "鹽酥雞",
+          "雞腿肉",
+          "地瓜粉",
+          "九層塔"
+        ],
+        "seconds": 1.574,
+        "error": null
+      },
+      {
+        "id": "i11",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "食譜"
+        ],
+        "predicted": [
+          "食譜"
+        ],
+        "tags": [
+          "隔夜燕:燕麥",
+          "香蕉花生醬",
+          "莓果優格",
+          "可可堅果"
+        ],
+        "seconds": 1.605,
+        "error": null
+      },
+      {
+        "id": "i12",
+        "platform": "instagram",
+        "lang": "ja",
+        "expected": [
+          "音樂"
+        ],
+        "predicted": [
+          "音樂"
+        ],
+        "tags": [
+          "新曲",
+          "帰り道",
+          "弾き語り",
+          "配信リリース"
+        ],
+        "seconds": 1.392,
+        "error": null
+      },
+      {
+        "id": "i13",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "音樂"
+        ],
+        "predicted": [
+          "音樂"
+        ],
+        "tags": [
+          "吉他",
+          "指彈",
+          "午後的風",
+          "節拍器"
+        ],
+        "seconds": 1.518,
+        "error": null
+      },
+      {
+        "id": "i14",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "活動"
+        ],
+        "predicted": [
+          "活動"
+        ],
+        "tags": [
+          "台北河岸倉庫",
+          "島嶼好物市集",
+          "手作品牌",
+          "現場演出"
+        ],
+        "seconds": 1.939,
+        "error": null
+      },
+      {
+        "id": "i15",
+        "platform": "instagram",
+        "lang": "ja",
+        "expected": [
+          "活動"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "みなと花火まつり",
+          "花火",
+          "交通規制"
+        ],
+        "seconds": 1.283,
+        "error": null
+      },
+      {
+        "id": "i16",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "語言學習"
+        ],
+        "predicted": [
+          "語言學習"
+        ],
+        "tags": [
+          "日文",
+          "敬語",
+          "尊敬語",
+          "謙讓語",
+          "丁寧語",
+          "職場用語"
+        ],
+        "seconds": 1.626,
+        "error": null
+      },
+      {
+        "id": "i17",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "求職"
+        ],
+        "predicted": [
+          "求職"
+        ],
+        "tags": [
+          "LinkedIn",
+          "個人檔案",
+          "職能關鍵字",
+          "求職狀態"
+        ],
+        "seconds": 1.479,
+        "error": null
+      },
+      {
+        "id": "i18",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "程式"
+        ],
+        "predicted": [
+          "程式"
+        ],
+        "tags": [
+          "Git",
+          "rebase",
+          "merge",
+          "stash",
+          "reflog"
+        ],
+        "seconds": 1.729,
+        "error": null
+      },
+      {
+        "id": "i19",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "其他"
+        ],
+        "predicted": [
+          "活動"
+        ],
+        "tags": [
+          "居家運動",
+          "徒手訓練",
+          "深蹲",
+          "伏地挺: 10下",
+          "棒式",
+          "40秒"
+        ],
+        "seconds": 1.484,
+        "error": null
+      },
+      {
+        "id": "i20",
+        "platform": "instagram",
+        "lang": "zh",
+        "expected": [
+          "餐廳"
+        ],
+        "predicted": [
+          "餐廳"
+        ],
+        "tags": [
+          "高雄",
+          "鹽埕區",
+          "牛排",
+          "炙牛排館",
+          "玉米濃湯",
+          "餐包",
+          "肋眼牛排"
+        ],
+        "seconds": 1.648,
+        "error": null
+      },
+      {
+        "id": "t01",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "餐廳"
+        ],
+        "predicted": [
+          "餐廳"
+        ],
+        "tags": [
+          "台中",
+          "生魚片",
+          "餐廳推薦"
+        ],
+        "seconds": 1.433,
+        "error": null
+      },
+      {
+        "id": "t02",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "餐廳"
+        ],
+        "predicted": [
+          "餐廳"
+        ],
+        "tags": [
+          "東京",
+          "新宿",
+          "燒肉",
+          "一人用餐"
+        ],
+        "seconds": 1.491,
+        "error": null
+      },
+      {
+        "id": "t03",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "旅遊"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "京都",
+          "清水寺",
+          "伏見稻荷",
+          "住宿建議"
+        ],
+        "seconds": 1.381,
+        "error": null
+      },
+      {
+        "id": "t04",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "旅遊"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "濟州島",
+          "公車",
+          "包車"
+        ],
+        "seconds": 1.441,
+        "error": null
+      },
+      {
+        "id": "t05",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "程式"
+        ],
+        "predicted": [
+          "程式"
+        ],
+        "tags": [
+          "RAG",
+          "chunk size",
+          "embedding model"
+        ],
+        "seconds": 1.895,
+        "error": null
+      },
+      {
+        "id": "t06",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "程式"
+        ],
+        "predicted": [
+          "程式"
+        ],
+        "tags": [
+          "Kubernetes",
+          "模型推論",
+          "部署"
+        ],
+        "seconds": 1.363,
+        "error": null
+      },
+      {
+        "id": "t07",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "求職"
+        ],
+        "predicted": [
+          "求職"
+        ],
+        "tags": [
+          "面試",
+          "期望薪資",
+          "薪資談判"
+        ],
+        "seconds": 1.455,
+        "error": null
+      },
+      {
+        "id": "t08",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "求職",
+          "程式"
+        ],
+        "predicted": [
+          "求職"
+        ],
+        "tags": [
+          "AI engineer",
+          "作品集",
+          "LLM",
+          "課堂專案"
+        ],
+        "seconds": 1.476,
+        "error": null
+      },
+      {
+        "id": "t09",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "語言學習"
+        ],
+        "predicted": [
+          "語言學習"
+        ],
+        "tags": [
+          "日文",
+          "N3",
+          "N2",
+          "學習方法"
+        ],
+        "seconds": 1.421,
+        "error": null
+      },
+      {
+        "id": "t10",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "語言學習"
+        ],
+        "predicted": [
+          "語言學習"
+        ],
+        "tags": [
+          "韓文",
+          "podcast",
+          "聽力練習",
+          "初級後:後半"
+        ],
+        "seconds": 1.521,
+        "error": null
+      },
+      {
+        "id": "t11",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "音樂"
+        ],
+        "predicted": [
+          "音樂"
+        ],
+        "tags": [
+          "日文歌",
+          "單曲循環",
+          "通勤歌單"
+        ],
+        "seconds": 1.434,
+        "error": null
+      },
+      {
+        "id": "t12",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "音樂"
+        ],
+        "predicted": [
+          "音樂"
+        ],
+        "tags": [
+          "浮光樂團",
+          "回聲",
+          "演唱會"
+        ],
+        "seconds": 1.287,
+        "error": null
+      },
+      {
+        "id": "t13",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "食譜"
+        ],
+        "predicted": [
+          "食譜"
+        ],
+        "tags": [
+          "電鍋",
+          "蒸蛋",
+          "滷肉",
+          "番茄飯"
+        ],
+        "seconds": 1.266,
+        "error": null
+      },
+      {
+        "id": "t14",
+        "platform": "threads",
+        "lang": "ja",
+        "expected": [
+          "食譜"
+        ],
+        "predicted": [
+          "食譜"
+        ],
+        "tags": [
+          "一人暮らし",
+          "洗碗少",
+          "親子丼",
+          "微波爐"
+        ],
+        "seconds": 1.48,
+        "error": null
+      },
+      {
+        "id": "t15",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "活動"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "高雄",
+          "啤酒節",
+          "港邊廣場"
+        ],
+        "seconds": 1.351,
+        "error": null
+      },
+      {
+        "id": "t16",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "活動"
+        ],
+        "predicted": [
+          "活動"
+        ],
+        "tags": [
+          "台北",
+          "專注力",
+          "讀書會"
+        ],
+        "seconds": 1.316,
+        "error": null
+      },
+      {
+        "id": "t17",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "其他"
+        ],
+        "predicted": [
+          "程式"
+        ],
+        "tags": [
+          "記帳 app",
+          "自動分類",
+          "每月報表"
+        ],
+        "seconds": 1.274,
+        "error": null
+      },
+      {
+        "id": "t18",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "其他"
+        ],
+        "predicted": [
+          "求職"
+        ],
+        "tags": [
+          "失眠",
+          "睡眠習慣"
+        ],
+        "seconds": 1.195,
+        "error": null
+      },
+      {
+        "id": "t19",
+        "platform": "threads",
+        "lang": "zh",
+        "expected": [
+          "餐廳",
+          "旅遊"
+        ],
+        "predicted": [
+          "餐廳"
+        ],
+        "tags": [
+          "首爾",
+          "明洞",
+          "醬蟹",
+          "餐廳推薦"
+        ],
+        "seconds": 1.369,
+        "error": null
+      },
+      {
+        "id": "t20",
+        "platform": "threads",
+        "lang": "ja",
+        "expected": [
+          "旅遊"
+        ],
+        "predicted": [
+          "旅遊"
+        ],
+        "tags": [
+          "台灣",
+          "觀光",
+          "九份",
+          "十分",
+          "台南"
+        ],
+        "seconds": 1.002,
+        "error": null
+      }
+    ]
+  }
+]
