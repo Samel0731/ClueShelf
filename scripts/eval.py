@@ -67,6 +67,9 @@ def write(out, name, data, markdown):
 
 def run_search(args):
     saves, queries = evals.load("saves.jsonl", args.golden), evals.load("queries.jsonl", args.golden)
+    if not queries:
+        print("queries.jsonl is empty; add search questions first.", file=sys.stderr)
+        return 2
     with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as workdir:
         report = retrieval.run(saves, queries, workdir)
     write(args.out, "eval-search", report, search_markdown(report))
@@ -94,10 +97,21 @@ def run_classify(args):
         print(f"Models not pulled in Ollama: {', '.join(missing)}", file=sys.stderr)
         return 2
     saves = evals.load("saves.jsonl", args.golden)
+    unreviewed = [save for save in saves if save.get("reviewed") is False]
+    saves = [save for save in saves if save.get("reviewed") is not False]
+    if unreviewed:
+        print(f"Skipping {len(unreviewed)} saves still marked \"reviewed\": false.", flush=True)
+    if not saves:
+        print("No reviewed saves to evaluate.", file=sys.stderr)
+        return 2
+    # A private set exported from the app carries the user's own topic catalog, as the worker uses.
+    catalog_file = Path(args.golden or evals.GOLDEN_DIR) / "topics.json"
+    catalog = json.loads(catalog_file.read_text(encoding="utf-8")) if catalog_file.exists() else None
     reports = []
     for name in models:
         print(f"Classifying {len(saves)} saves with {name}...", flush=True)
-        reports.append(classification.run(saves, model=name))
+        with ai.topic_catalog(catalog):
+            reports.append(classification.run(saves, model=name))
     write(args.out, "eval-classify", reports, classify_markdown(reports))
     return 0
 
