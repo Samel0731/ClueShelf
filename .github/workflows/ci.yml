@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths-ignore: ["docs/**", "outputs/**", "reports/**", "**/*.md"]
+  workflow_dispatch:
   pull_request:
     paths-ignore: ["docs/**", "outputs/**", "reports/**", "**/*.md"]
 
